@@ -1,0 +1,27 @@
+M401 // Abaixa Servo
+M402 // Levanta Servo
+
+Modo de configuração
+Executar primeiro: 
+→ G28  // homing
+Em segundo: 
+→ G29  // nivelamento automatico
+Por ultimo, mandar um -10 para posição da primeira camada. 
+
+// Sobe ou desce eixo z (-10 para descer) 
+→ G0 Z 10 
+
+//Alinha o bico no meio
+G0 Y 90
+G0 X 90  
+
+buscar no Configuration.h por isso ↓ E fazer ajustes nescessários. 
+Z_PROBE_OFFSET_FROM_EXTRUDER
+
+//Valores correspontes a passos por milimitro. 
+DEFAULT_AXIS_STEPS_PER_UNIT
+
+//Variaveis do nivelamento automático. 
+ENABLED(AUTO_BED_LEVELING_BILINEAR)
+// Pontos do nivelamento linear
+LEFT_PROBE_BED_POSITION 

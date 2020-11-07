@@ -1,0 +1,18 @@
+; Default start code
+G28 ; Home extruder
+G29 ; Home All
+G1 Z15 F{Z_TRAVEL_SPEED}
+
+; Parte retirada do video. 
+G92 E0 ; Não sei pra que serve
+G1 F200 E3 ; Não sei pra que serve. 
+G92 E0 ; Não sei pra que serve. 
+
+; Parte de configuração da mesa e extruder
+M82 ; Extruder in absolute mode
+{IF_BED}M190 S{BED}
+; Activate all used extruder
+{IF_EXT0}M104 T0 S{TEMP0}
+G92 E0 ; Reset extruder position
+; Wait for all used extruders to reach temperature
+{IF_EXT0}M109 T0 S{TEMP0}
